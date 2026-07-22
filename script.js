@@ -291,6 +291,13 @@ typingInput.addEventListener("keydown", (event) => {
 });
 
 window.addEventListener("keydown", (event) => {
+  const activeTag = document.activeElement?.tagName;
+  const isTypingTarget = activeTag === "INPUT" || activeTag === "TEXTAREA";
+
+  if (state.level !== 2 || isTypingTarget) {
+    return;
+  }
+
   if (event.key.toLowerCase() === "w") {
     event.preventDefault();
     state.keys.w = true;
@@ -302,6 +309,13 @@ window.addEventListener("keydown", (event) => {
 });
 
 window.addEventListener("keyup", (event) => {
+  const activeTag = document.activeElement?.tagName;
+  const isTypingTarget = activeTag === "INPUT" || activeTag === "TEXTAREA";
+
+  if (state.level !== 2 || isTypingTarget) {
+    return;
+  }
+
   if (event.key.toLowerCase() === "w") {
     state.keys.w = false;
   }
