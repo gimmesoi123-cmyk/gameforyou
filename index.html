@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Dodge Box Hunt</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <h1>Typing Dodge Box Hunt</h1>
+        <p>Complete three escalating challenges to win the game.</p>
+      </header>
+
+      <section class="panel controls">
+        <p id="statusText">Press start to begin level 1.</p>
+        <button id="startButton">Start Level 1</button>
+      </section>
+
+      <section id="level1" class="card active">
+        <h2>Level 1 — Type the sentence</h2>
+        <p>Type the sentence before the timer runs out. The target speed is 40 WPM.</p>
+        <div class="target-label">Sentence to type:</div>
+        <div class="target-box" id="targetSentence"></div>
+        <input id="typingInput" type="text" autocomplete="off" spellcheck="false" placeholder="Start typing here..." />
+        <div class="meta-row">
+          <span>Time left: <strong id="timerValue">0</strong> seconds</span>
+          <button id="submitButton">Submit</button>
+        </div>
+      </section>
+
+      <section id="level2" class="card hidden">
+        <h2>Level 2 — Dodge the words</h2>
+        <p>Use W and S to move the character up and down while the sentence flies left to right.</p>
+        <div id="dodgeArea" class="game-area"></div>
+        <div class="meta-row">
+          <span id="level2Status">Stay alive until all words have passed.</span>
+        </div>
+      </section>
+
+      <section id="level3" class="card hidden">
+        <h2>Level 3 — Find the hidden victory</h2>
+        <p>Choose three boxes. If you hit the winning box, you win.</p>
+        <div id="boxGrid" class="box-grid"></div>
+        <div class="meta-row">
+          <span id="level3Status">You have 3 picks.</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
